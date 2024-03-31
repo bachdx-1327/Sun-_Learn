@@ -34,3 +34,45 @@ Mình hiểu đơn giản thì RESTful API là một tiêu chuẩn dùng trong v
 REST (REpresentational StateTransfer) là một dạng chuyển đổi cấu trúc dữ liệu, một kiểu kiến trúc để viết API. Nó sử dụng phương thức HTTP đơn giản để tạo cho giao tiếp giữa các máy. Vì vậy, thay vì sử dụng một URL cho việc xử lý một số thông tin người dùng, REST gửi một yêu cầu HTTP như GET, POST, DELETE, vv đến một URL để xử lý dữ liệu.
 
 Kết hợp nhiều ý lại với nhau thì chúng ta có RESTful API :3. Chức năng quan trọng nhất của REST là quy định cách sử dụng các HTTP method (như GET, POST, PUT, DELETE…) và cách định dạng các URL cho ứng dụng web để quản các resource. RESTful không quy định logic code ứng dụng và không giới hạn bởi ngôn ngữ lập trình ứng dụng, bất kỳ ngôn ngữ hoặc framework nào cũng có thể sử dụng để thiết kế một RESTful API.
+
+## RESTful API hoạt động như thế nào?
+
+### Định dạng cơ bản
+
+Gồm có ba thành phần chính:
+
+- **URL Endpoint**: Là một liên kết URL đại diện cho tài nguyên mà chúng ta muốn truy cập. Tài nguyên có thể là văn bản, hình ảnh, tài liệu hoặc bất kỳ mục dữ liệu nào. Ví dụ: example.com/surveys cho phép chúng ta xem hoặc tạo mẫu khảo sát và example.com/surveys/123/responses cho phép chúng ta thực hiện tương tự đối với tất cả các phản hồi của khảo sát 123.
+- **HTTP verb**: Cho biết máy chủ những gì chúng ta muốn thực hiện với tài nguyên điểm cuối URL. Ví dụ, một yêu cầu POST có nghĩa là chúng ta muốn tạo một mẫu khảo sát mới và một yêu cầu GET có nghĩa là chúng ta muốn xem một mẫu khảo sát hiện có.
+- **Body message**: Là một tải trọng tùy chỉnh tùy chọn chứa thông báo với các thuộc tính và giá trị mà chúng ta muốn sử dụng để tạo hoặc cập nhật một tài nguyên nhất định. Ví dụ: chúng ta muốn tạo một phản hồi mới cho khảo sát 123 đã thu thập được, bao gồm điểm NPS tích cực là 9, một tin nhắn phản hồi ngắn và ID duy nhất của người phản hồi đã cung cấp phản hồi.
+
+### HTTP verb
+
+Có 5 lệnh động từ cơ bản khi thực hiện yêu cầu HTTP:
+
+- GET: Thực hiện yêu cầu chỉ đọc để xem một hoặc nhiều tài nguyên.
+- POST: Tạo một tài nguyên mới dựa trên tải trọng được cung cấp trong thân của yêu cầu.
+- DELETE: Hủy tài nguyên được cung cấp dựa trên ID được cung cấp.
+- PUT: Cập nhật toàn bộ các trường của tài nguyên dựa trên thân được cung cấp hoặc tạo một tài nguyên mới nếu chưa tồn tại.
+- PATCH: Chỉ cập nhật các trường của tài nguyên nếu nó tồn tại.
+  Hầu hết các ứng dụng và tài nguyên sẽ hỗ trợ tất cả các lệnh này. Đây thường được gọi là ứng dụng CRUD:
+
+| HTTP Verb | Chức năng   |
+| --------- | ----------- |
+| CREATE    | POST        |
+| READ      | GET         |
+| UPDATE    | PUT & PATCH |
+| DELETE    | DELETE      |
+
+### URL Endpoint
+
+Điểm cuối URL trong API RESTful đại diện cho bất kỳ đối tượng, dữ liệu hoặc dịch vụ nào được API có thể truy cập. Ví dụ: example.com/surveys đại diện cho dữ liệu của tất cả các mẫu khảo sát và example.com/surveys/123/responses đại diện cho dữ liệu của tất cả các phản hồi cho một khảo sát nhất định.
+
+## Kết luận
+
+RESTful API là một phong cách kiến trúc phần mềm linh hoạt và hiệu quả để thiết kế các API web. RESTful API cung cấp nhiều lợi ích, bao gồm khả năng linh hoạt, khả năng mở rộng, dễ sử dụng và bảo mật. Khi thiết kế RESTful API, cần lưu ý một số yếu tố quan trọng, chẳng hạn như xác định các tài nguyên, thiết kế URI, sử dụng các phương thức HTTP chính xác, trả về mã trạng thái HTTP chính xác và tài liệu API.
+
+## Reference
+
+- https://viblo.asia/p/restful-api-la-gi-1Je5EDJ4lnL
+- https://aws.amazon.com/vi/what-is/restful-api/
+- https://mannhowie.com/rest-api
